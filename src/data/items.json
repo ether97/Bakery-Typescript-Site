@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Confetti Cake",
+    "price": "55.00",
+    "description": "Vanilla cake extra festive with confetti folded into each layer and covered with buttercream.",
+    "imgUrl": "/public/Confetti.webp"
+  },
+  {
+    "id": 2,
+    "name": "Chocolate Cake",
+    "price": "50.00",
+    "description": "Three layers of super-rich chocolate cake and silky chocolate buttercream means pure, indulgent bliss.",
+    "imgUrl": "/public/Confetti.webp"
+  },
+  {
+    "id": 3,
+    "name": "Celebration Cake",
+    "price": "58.00",
+    "description": "Confetti-speckled vanilla cake covered with rich, yellow buttercream, and decorated with a green buttercream border.",
+    "imgUrl": "/public/Celebration.webp"
+  },
+  {
+    "id": 4,
+    "name": "Vanilla Cake",
+    "price": "50.00",
+    "description": "A rich, buttery cake with a light crumb and layered with vanilla or chocolate buttercream.",
+    "imgUrl": "/public/Vanilla.webp"
+  },
+  {
+    "id": 5,
+    "name": "Carrot Cake",
+    "price": "55.00",
+    "description": "A super-moist carrot cake with freshly grated carrots, juicy pineapple, shredded coconut, raisins, and walnuts, then topped with tangy cream cheese frosting",
+    "imgUrl": "/public/Carrot.webp"
+  },
+  {
+    "id": 6,
+    "name": "Hummingbird Cake",
+    "price": "55.00",
+    "description": "The unique combination of banana, pineapple, and pecans flavor this classic Southern layer cake, which has a texture similar to our extra-moist carrot cake.",
+    "imgUrl": "/public/Hummingbird.webp"
+  },
+  {
+    "id": 7,
+    "name": "Red Velvet Cake",
+    "price": "55.00",
+    "description": " Layers of moist, crimson-colored cake are covered with your choice of whipped vanilla or cream cheese icing.",
+
+    "imgUrl": "/public/RedVelvet.webp"
+  },
+  {
+    "id": 8,
+    "name": "Buttercream Cake",
+    "price": "55.00",
+    "description": "This classic vanilla cake with vanilla buttercream screams holiday with a fun inscription that will be sure to light up your holiday celebrations.",
+
+    "imgUrl": "/public/Buttercream.webp"
+  },
+  {
+    "id": 9,
+    "name": "Dutch Chocolate Cake",
+    "price": "55.00",
+    "description": "There’s nothing sinful about this most classic of chocolate desserts. We make the moist, extra-dark cake with premium Dutch cocoa powder and top it with chocolate mocha buttercream. ",
+
+    "imgUrl": "/public/DutchChocolate.webp"
+  }
+]

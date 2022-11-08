@@ -1,45 +1,58 @@
-import CSS from "csstype";
-import { Container } from "react-bootstrap";
+import type * as CSS from "csstype";
+import { Container, Row, Col } from "react-bootstrap";
+import storeItems from "../data/items.json";
+import { StoreItem } from "../Components/StoreItem";
 
-const storeStyle: CSS.Properties = {
-  backgroundImage: "url('mr-autthaporn-pradidpong-EZt7OJagHyY-unsplash.jpg')",
+const imgWrapper: CSS.Properties = {
+  backgroundImage: "url('sera-iZgQKxuMRHc-unsplash.jpg')",
   backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
-  height: "100vh",
-  width: "100vw",
+  height: "75vh",
+  marginBottom: "100px",
   position: "relative",
 };
 
 const container: CSS.Properties = {
-  height: "30vh",
-  width: "40vw",
-  background: "linear-gradient(to right, transparent, rgba(0,0,0,0.9))",
-  right: "100px",
+  height: "200vh",
+};
+
+const imgWrapperCover: CSS.Properties = {
+  height: "10vh",
   position: "absolute",
-  top: "300px",
-  textAlign: "center",
+  bottom: "0px",
+  left: "0px",
+  width: "100%",
+  backgroundImage:
+    "linear-gradient(to bottom, transparent, rgb(255,255,255,1))",
+};
+
+const cakes: CSS.Properties = {
+  fontFamily: "Petit Formal Script, cursive",
+  lineHeight: "75vh",
+  fontSize: "10rem",
   color: "white",
-  border: "solid 2px white",
+  textShadow: "5px 5px black",
+  textAlign: "center",
 };
-
-const blockquote: CSS.Properties = {
-  fontSize: "8rem",
-  fontFamily: "Shalimar, cursive",
-};
-
-const h1Style: CSS.Properties = {};
-
-const pStyle: CSS.Properties = {};
 
 export function Store() {
   return (
-    <div style={storeStyle}>
-      <div style={container}>
-        <div></div>
-        <blockquote style={blockquote}>"The best bakery in town"</blockquote>
-        <h1 style={h1Style}>The New York Times</h1>
-        <p style={pStyle}>New York Times</p>
+    <div style={container}>
+      <div style={imgWrapper}>
+        <h1 style={cakes}>Cakes</h1>
+        <div style={imgWrapperCover}></div>
       </div>
+
+      <Container className="mb-5">
+        <Row md={2} xs={1} lg={3} className="g-3">
+          {storeItems.map((item) => (
+            <Col>
+              <StoreItem key={item.id} {...item} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
 }

@@ -4,16 +4,19 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Store } from "./pages/Store";
 import { Navbar } from "./Components/Navbar";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/store" element={<Store />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
+      <ShoppingCartProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </ShoppingCartProvider>
     </>
   );
 }
