@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Confetti Cake",
+    "category": "Cakes",
     "price": "55.00",
     "description": "Vanilla cake extra festive with confetti folded into each layer and covered with buttercream.",
     "imgUrl": "/public/Confetti.webp"
@@ -9,13 +10,15 @@
   {
     "id": 2,
     "name": "Chocolate Cake",
+    "category": "Cakes",
     "price": "50.00",
     "description": "Three layers of super-rich chocolate cake and silky chocolate buttercream means pure, indulgent bliss.",
-    "imgUrl": "/public/Confetti.webp"
+    "imgUrl": "/public/Chocolate.webp"
   },
   {
     "id": 3,
     "name": "Celebration Cake",
+    "category": "Cakes",
     "price": "58.00",
     "description": "Confetti-speckled vanilla cake covered with rich, yellow buttercream, and decorated with a green buttercream border.",
     "imgUrl": "/public/Celebration.webp"
@@ -23,6 +26,7 @@
   {
     "id": 4,
     "name": "Vanilla Cake",
+    "category": "Cakes",
     "price": "50.00",
     "description": "A rich, buttery cake with a light crumb and layered with vanilla or chocolate buttercream.",
     "imgUrl": "/public/Vanilla.webp"
@@ -30,6 +34,7 @@
   {
     "id": 5,
     "name": "Carrot Cake",
+    "category": "Cakes",
     "price": "55.00",
     "description": "A super-moist carrot cake with freshly grated carrots, juicy pineapple, shredded coconut, raisins, and walnuts, then topped with tangy cream cheese frosting",
     "imgUrl": "/public/Carrot.webp"
@@ -37,6 +42,7 @@
   {
     "id": 6,
     "name": "Hummingbird Cake",
+    "category": "Cakes",
     "price": "55.00",
     "description": "The unique combination of banana, pineapple, and pecans flavor this classic Southern layer cake, which has a texture similar to our extra-moist carrot cake.",
     "imgUrl": "/public/Hummingbird.webp"
@@ -44,6 +50,7 @@
   {
     "id": 7,
     "name": "Red Velvet Cake",
+    "category": "Cakes",
     "price": "55.00",
     "description": " Layers of moist, crimson-colored cake are covered with your choice of whipped vanilla or cream cheese icing.",
 
@@ -52,6 +59,7 @@
   {
     "id": 8,
     "name": "Buttercream Cake",
+    "category": "Cakes",
     "price": "55.00",
     "description": "This classic vanilla cake with vanilla buttercream screams holiday with a fun inscription that will be sure to light up your holiday celebrations.",
 
@@ -60,6 +68,7 @@
   {
     "id": 9,
     "name": "Dutch Chocolate Cake",
+    "category": "Cakes",
     "price": "55.00",
     "description": "There’s nothing sinful about this most classic of chocolate desserts. We make the moist, extra-dark cake with premium Dutch cocoa powder and top it with chocolate mocha buttercream. ",
 
@@ -68,6 +77,7 @@
   {
     "id": 10,
     "name": "Banana Pudding Cookies",
+    "category": "Cookies",
     "price": "22.20",
     "description": "Our Banana Pudding Cookie is a soft and sweet treat packed with white chocolate chips, vanilla wafers and our world-famous Banana Pudding mix. ",
     "imgUrl": "/public/Banana Pudding Cookies.webp"
@@ -75,6 +85,7 @@
   {
     "id": 11,
     "name": "Chocolate Chunk Cookies",
+    "category": "Cookies",
     "price": "18.00",
     "description": "Our soft and chewy take on the classic chocolate chip cookie—but make it chunky!  ",
 
@@ -83,6 +94,7 @@
   {
     "id": 12,
     "name": "Spritz Cookies",
+    "category": "Cookies",
     "price": "18.00",
     "description": "These buttery shortbread-like cookies are made the old fashioned way with a cookie press. ",
 
@@ -91,6 +103,7 @@
   {
     "id": 13,
     "name": "Red Velvet Cookies",
+    "category": "Cookies",
     "price": "25.00",
     "description": "This online-exclusive features our soft-baked, Banana Pudding-packed cookies with a delicious Holiday spin -- our famous red velvet cake! ",
 
@@ -99,6 +112,7 @@
   {
     "id": 14,
     "name": "Chocolate Crinkle Cookies",
+    "category": "Cookies",
     "price": "13.20",
     "description": "These soft, fudgy chocolate cookies “crack” when baked, then showered in powdered sugar to make a striking addition to your holiday cookie assortment. ",
 
@@ -107,6 +121,7 @@
   {
     "id": 15,
     "name": "Jammy Thumbprint Cookies",
+    "category": "Cookies",
     "price": "13.20",
     "description": "Our thumbprint cookies are a twist on the classic, with crisp, butter pecan cookies topped with vanilla buttercream and holiday-colored nonpareils. ",
 
@@ -115,6 +130,7 @@
   {
     "id": 16,
     "name": "Snickerdoodle Cookies",
+    "category": "Cookies",
     "price": "13.20",
     "description": "Our classic cinnamon sugar cookies are a wonderful addition to any holiday celebration. ",
 
@@ -123,6 +139,7 @@
   {
     "id": 17,
     "name": "Sno-ball Cookies",
+    "category": "Cookies",
     "price": "13.20",
     "description": "Delicate and delicious! Our buttery pecan cookies rolled in powdered sugar – they melt in your mouth! ",
 
@@ -131,6 +148,7 @@
   {
     "id": 18,
     "name": "Gingersnap Cookies",
+    "category": "Cookies",
     "price": "13.20",
     "description": "Cinnamon, ginger, cloves, brown sugar and molasses make this classic holiday cookie a zinger. ",
 
@@ -139,6 +157,7 @@
   {
     "id": 19,
     "name": "Apple Crumb Pie",
+    "category": "Pies",
     "price": "28.00",
     "description": "A buttery crust filled with tender cubes of sweet-tart Golden Delicious apples, covered with a chunky cinnamon crumb topping. ",
 
@@ -147,6 +166,7 @@
   {
     "id": 20,
     "name": "Pumpkin Pie",
+    "category": "Pies",
     "price": "28.00",
     "description": "Need a classic pumpkin pie? Look no further! Ours is pumpkin perfection, with a buttery crust and silky-smooth custard filling. ",
 
@@ -155,6 +175,8 @@
   {
     "id": 21,
     "name": "Pecan Pie",
+    "category": "Pies",
+
     "price": "28.00",
     "description": "Our take on the sweet Southern classic consists of a buttery, deeply flavored custard, packed with chopped pecans and topped with pecan halves. ",
 
@@ -163,6 +185,8 @@
   {
     "id": 22,
     "name": "Apple Double Crust Pie",
+    "category": "Pies",
+
     "price": "28.00",
     "description": "We wouldn’t make an apple pie unless we could make the best. Our buttery, flaky double crust is piled high with apples and cinnamon sugar.  ",
 
@@ -171,6 +195,8 @@
   {
     "id": 23,
     "name": "Chocolate Pecan Pie",
+    "category": "Pies",
+
     "price": "28.00",
     "description": "Pecan pie, but make it chocolatey: We make the classic extra-indulgent with a layer of chocolate below the buttery, nutty filling. ",
 
@@ -179,6 +205,8 @@
   {
     "id": 24,
     "name": "Pumpkin Praline Pie",
+    "category": "Pies",
+
     "price": "28.00",
     "description": "Our classic, silky-smooth Pumpkin Pie covered with a crunchy, crumbly praline topping. It’s like eating two pies in one!  ",
 

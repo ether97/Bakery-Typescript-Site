@@ -20,13 +20,16 @@ const imgWrapper: CSS.Properties = {
   marginBottom: "100px",
   position: "relative",
   width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 };
 
 const container: CSS.Properties = {
-  height: "200vh",
   display: "flex",
   flexDirection: "column",
   // alignItems: "center",
+  backgroundColor: "#f8f8ff",
 };
 
 const imgWrapperCover: CSS.Properties = {
@@ -43,8 +46,8 @@ const cakes: CSS.Properties = {
   fontFamily: "Petit Formal Script, cursive",
   lineHeight: "75vh",
   fontSize: "10rem",
-  color: "white",
-  textShadow: "5px 5px black",
+  color: "black",
+  textShadow: "5px 5px white",
   textAlign: "center",
 };
 
@@ -81,48 +84,35 @@ export function Store() {
   }
 
   function handleFlavor(input: string): void {
-    if (input === "Chocolate") {
-      if (title !== "Bakery") {
-        setFlavor(input);
-        setNewStoreItems(
-          newStoreItems.filter((item) => item.name.substring(0, 2) === "Ch")
-        );
-      } else {
-        setFlavor(input);
-        setNewStoreItems(
-          storeItems.filter((item) => item.name.substring(0, 2) === "Ch")
-        );
-      }
-    } else if (input === "Vanilla") {
-      if (title !== "Bakery") {
-        setFlavor(input);
-        setNewStoreItems(
-          newStoreItems.filter((item) => item.name.substring(0, 2) === "Va")
-        );
-      } else {
-        setFlavor(input);
-        setNewStoreItems(
-          storeItems.filter((item) => item.name.substring(0, 2) === "Va")
-        );
-      }
-    } else if (input === "Carrot") {
-      if (title !== "Bakery") {
-        setFlavor(input);
-        setNewStoreItems(
-          newStoreItems.filter((item) => item.name.substring(0, 2) === "Ca")
-        );
-      } else {
-        setFlavor(input);
-        setNewStoreItems(
-          storeItems.filter((item) => item.name.substring(0, 2) === "Ca")
-        );
-      }
-    }
+    setNewStoreItems(
+      storeItems.filter((item) => {
+        if (
+          item.name.substring(0, 2) === input.substring(0, 2) &&
+          item.category === title
+        ) {
+          return item;
+        } else if (
+          item.name.substring(0, 2) === input.substring(0, 2) &&
+          title === "Bakery"
+        ) {
+          return item;
+        }
+      })
+    );
   }
   return (
     <div style={container}>
       <div style={imgWrapper}>
-        <h1 style={cakes}>{title}</h1>
+        <div
+          style={{
+            height: "300px",
+            width: "100%",
+            backgroundColor: "rgb(255,255,255,0.5)",
+          }}
+          className="d-flex align-items-center justify-content-center"
+        >
+          <h1 style={cakes}>{title}</h1>
+        </div>
         <div style={imgWrapperCover}></div>
       </div>
 
@@ -150,6 +140,12 @@ export function Store() {
             </Dropdown.Item>
             <Dropdown.Item eventKey="3" onClick={() => handleFlavor("Carrot")}>
               Carrot
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="3" onClick={() => handleFlavor("Apple")}>
+              Apple
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="3" onClick={() => handleFlavor("Pumpkin")}>
+              Pumpkin
             </Dropdown.Item>
           </DropdownButton>
         </div>

@@ -60,6 +60,7 @@ const btn: CSS.Properties = {
   padding: "10px 50px 10px 50px",
   fontFamily: "Playfair Display, serif",
   fontSize: "2rem",
+  color: "black",
 };
 
 export function Home() {
@@ -73,7 +74,7 @@ export function Home() {
         <p>New York Times</p>
       </div>
       {/* </div> */}
-      <Button variant="outline-dark" style={btn}>
+      <Button variant="outline-light" style={btn}>
         Shop Pastries
       </Button>
     </div>

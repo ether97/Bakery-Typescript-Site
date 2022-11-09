@@ -5,15 +5,14 @@ import { useLocation } from "react-router-dom";
 
 export function Navbar() {
   const location = useLocation();
-  const btnDesign =
-    location.pathname === "/" ? "outline-light" : "outline-dark";
+  const btnDesign = location.pathname === "/" ? "outline-light" : "dark";
   const backgroundColor = location.pathname === "/" ? "transparent" : "white";
 
   return (
     <NavbarBs
       fixed="top"
       style={{
-        height: "5vh",
+        height: "8vh",
         position: "fixed",
         width: "100%",
         background: backgroundColor,
