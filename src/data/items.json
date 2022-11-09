@@ -64,5 +64,124 @@
     "description": "There’s nothing sinful about this most classic of chocolate desserts. We make the moist, extra-dark cake with premium Dutch cocoa powder and top it with chocolate mocha buttercream. ",
 
     "imgUrl": "/public/DutchChocolate.webp"
+  },
+  {
+    "id": 10,
+    "name": "Banana Pudding Cookies",
+    "price": "22.20",
+    "description": "Our Banana Pudding Cookie is a soft and sweet treat packed with white chocolate chips, vanilla wafers and our world-famous Banana Pudding mix. ",
+    "imgUrl": "/public/Banana Pudding Cookies.webp"
+  },
+  {
+    "id": 11,
+    "name": "Chocolate Chunk Cookies",
+    "price": "18.00",
+    "description": "Our soft and chewy take on the classic chocolate chip cookie—but make it chunky!  ",
+
+    "imgUrl": "/public/Chocolate Chunk Cookies.webp"
+  },
+  {
+    "id": 12,
+    "name": "Spritz Cookies",
+    "price": "18.00",
+    "description": "These buttery shortbread-like cookies are made the old fashioned way with a cookie press. ",
+
+    "imgUrl": "/public/Spritz Cookies.webp"
+  },
+  {
+    "id": 13,
+    "name": "Red Velvet Cookies",
+    "price": "25.00",
+    "description": "This online-exclusive features our soft-baked, Banana Pudding-packed cookies with a delicious Holiday spin -- our famous red velvet cake! ",
+
+    "imgUrl": "/public/Red Velvet Cookies.webp"
+  },
+  {
+    "id": 14,
+    "name": "Chocolate Crinkle Cookies",
+    "price": "13.20",
+    "description": "These soft, fudgy chocolate cookies “crack” when baked, then showered in powdered sugar to make a striking addition to your holiday cookie assortment. ",
+
+    "imgUrl": "/public/Chocolate Crinkle Cookies.webp"
+  },
+  {
+    "id": 15,
+    "name": "Jammy Thumbprint Cookies",
+    "price": "13.20",
+    "description": "Our thumbprint cookies are a twist on the classic, with crisp, butter pecan cookies topped with vanilla buttercream and holiday-colored nonpareils. ",
+
+    "imgUrl": "/public/Jammy Thumbprint Cookies.webp"
+  },
+  {
+    "id": 16,
+    "name": "Snickerdoodle Cookies",
+    "price": "13.20",
+    "description": "Our classic cinnamon sugar cookies are a wonderful addition to any holiday celebration. ",
+
+    "imgUrl": "/public/Snickerdoodle Cookies.webp"
+  },
+  {
+    "id": 17,
+    "name": "Sno-ball Cookies",
+    "price": "13.20",
+    "description": "Delicate and delicious! Our buttery pecan cookies rolled in powdered sugar – they melt in your mouth! ",
+
+    "imgUrl": "/public/Sno-ball Cookies.webp"
+  },
+  {
+    "id": 18,
+    "name": "Gingersnap Cookies",
+    "price": "13.20",
+    "description": "Cinnamon, ginger, cloves, brown sugar and molasses make this classic holiday cookie a zinger. ",
+
+    "imgUrl": "/public/Gingersnap Cookies.webp"
+  },
+  {
+    "id": 19,
+    "name": "Apple Crumb Pie",
+    "price": "28.00",
+    "description": "A buttery crust filled with tender cubes of sweet-tart Golden Delicious apples, covered with a chunky cinnamon crumb topping. ",
+
+    "imgUrl": "/public/Apple Crumb Pie.webp"
+  },
+  {
+    "id": 20,
+    "name": "Pumpkin Pie",
+    "price": "28.00",
+    "description": "Need a classic pumpkin pie? Look no further! Ours is pumpkin perfection, with a buttery crust and silky-smooth custard filling. ",
+
+    "imgUrl": "/public/Pumpkin Pie.webp"
+  },
+  {
+    "id": 21,
+    "name": "Pecan Pie",
+    "price": "28.00",
+    "description": "Our take on the sweet Southern classic consists of a buttery, deeply flavored custard, packed with chopped pecans and topped with pecan halves. ",
+
+    "imgUrl": "/public/Pecan Pie.webp"
+  },
+  {
+    "id": 22,
+    "name": "Apple Double Crust Pie",
+    "price": "28.00",
+    "description": "We wouldn’t make an apple pie unless we could make the best. Our buttery, flaky double crust is piled high with apples and cinnamon sugar.  ",
+
+    "imgUrl": "/public/Apple Double Crust Pie.webp"
+  },
+  {
+    "id": 23,
+    "name": "Chocolate Pecan Pie",
+    "price": "28.00",
+    "description": "Pecan pie, but make it chocolatey: We make the classic extra-indulgent with a layer of chocolate below the buttery, nutty filling. ",
+
+    "imgUrl": "/public/Chocolate Pecan Pie.webp"
+  },
+  {
+    "id": 24,
+    "name": "Pumpkin Praline Pie",
+    "price": "28.00",
+    "description": "Our classic, silky-smooth Pumpkin Pie covered with a crunchy, crumbly praline topping. It’s like eating two pies in one!  ",
+
+    "imgUrl": "/public/Pumpkin Praline Pie.webp"
   }
 ]
