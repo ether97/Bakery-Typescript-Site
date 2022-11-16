@@ -10,6 +10,7 @@ import {
 import storeItems from "../data/items.json";
 import { StoreItem } from "../Components/StoreItem";
 import { useEffect, useState } from "react";
+import Footer from "../Components/Footer";
 
 const imgWrapper: CSS.Properties = {
   backgroundImage: "url('sera-iZgQKxuMRHc-unsplash.jpg')",
@@ -101,97 +102,109 @@ export function Store() {
     );
   }
   return (
-    <div style={container}>
-      <div style={imgWrapper}>
-        <div
-          style={{
-            height: "300px",
-            width: "100%",
-            backgroundColor: "rgb(255,255,255,0.5)",
-          }}
-          className="d-flex align-items-center justify-content-center"
-        >
-          <h1 style={cakes}>{title}</h1>
-        </div>
-        <div style={imgWrapperCover}></div>
-      </div>
-
-      <Container className="mb-5 d-flex g-10 flex-column">
-        <div className="d-flex align-items-center w-100">
-          <DropdownButton
-            align="end"
-            title={flavor}
-            id="dropdown-menu-align-end"
-            variant="dark"
-            className="float-right"
+    <>
+      <div style={container}>
+        <div style={imgWrapper}>
+          <div
             style={{
-              marginLeft: "auto",
-              marginBottom: "10px",
+              height: "300px",
+              width: "100%",
+              backgroundColor: "rgb(255,255,255,0.5)",
             }}
+            className="d-flex align-items-center justify-content-center"
           >
-            <Dropdown.Item eventKey="1" onClick={() => handleFlavor("Vanilla")}>
-              Vanilla
-            </Dropdown.Item>
-            <Dropdown.Item
-              eventKey="2"
-              onClick={() => handleFlavor("Chocolate")}
-            >
-              Chocolate
-            </Dropdown.Item>
-            <Dropdown.Item eventKey="3" onClick={() => handleFlavor("Carrot")}>
-              Carrot
-            </Dropdown.Item>
-            <Dropdown.Item eventKey="3" onClick={() => handleFlavor("Apple")}>
-              Apple
-            </Dropdown.Item>
-            <Dropdown.Item eventKey="3" onClick={() => handleFlavor("Pumpkin")}>
-              Pumpkin
-            </Dropdown.Item>
-          </DropdownButton>
+            <h1 style={cakes}>{title}</h1>
+          </div>
+          <div style={imgWrapperCover}></div>
         </div>
 
-        <div className="d-flex justify-content-between">
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <Button
-              variant="outline-dark"
-              style={storeBtn}
-              onClick={() => handleBakery("All")}
+        <Container className="mb-5 d-flex g-10 flex-column">
+          <div className="d-flex align-items-center w-100">
+            <DropdownButton
+              align="end"
+              title={flavor}
+              id="dropdown-menu-align-end"
+              variant="dark"
+              className="float-right"
+              style={{
+                marginLeft: "auto",
+                marginBottom: "10px",
+              }}
             >
-              All
-            </Button>
-            <Button
-              variant="outline-dark"
-              style={storeBtn}
-              onClick={() => handleBakery("Cakes")}
-            >
-              Cakes
-            </Button>
-            <Button
-              variant="outline-dark"
-              style={storeBtn}
-              onClick={() => handleBakery("Cookies")}
-            >
-              Cookies
-            </Button>
-            <Button
-              variant="outline-dark"
-              style={storeBtn}
-              onClick={() => handleBakery("Pies")}
-            >
-              Pies
-            </Button>
+              <Dropdown.Item
+                eventKey="1"
+                onClick={() => handleFlavor("Vanilla")}
+              >
+                Vanilla
+              </Dropdown.Item>
+              <Dropdown.Item
+                eventKey="2"
+                onClick={() => handleFlavor("Chocolate")}
+              >
+                Chocolate
+              </Dropdown.Item>
+              <Dropdown.Item
+                eventKey="3"
+                onClick={() => handleFlavor("Carrot")}
+              >
+                Carrot
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="3" onClick={() => handleFlavor("Apple")}>
+                Apple
+              </Dropdown.Item>
+              <Dropdown.Item
+                eventKey="3"
+                onClick={() => handleFlavor("Pumpkin")}
+              >
+                Pumpkin
+              </Dropdown.Item>
+            </DropdownButton>
           </div>
-          <div style={{ width: "80%" }}>
-            <Row md={2} xs={1} lg={3} className="g-3">
-              {newStoreItems.map((item) => (
-                <Col>
-                  <StoreItem key={item.id} {...item} />
-                </Col>
-              ))}
-            </Row>
+
+          <div className="d-flex justify-content-between">
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <Button
+                variant="outline-dark"
+                style={storeBtn}
+                onClick={() => handleBakery("All")}
+              >
+                All
+              </Button>
+              <Button
+                variant="outline-dark"
+                style={storeBtn}
+                onClick={() => handleBakery("Cakes")}
+              >
+                Cakes
+              </Button>
+              <Button
+                variant="outline-dark"
+                style={storeBtn}
+                onClick={() => handleBakery("Cookies")}
+              >
+                Cookies
+              </Button>
+              <Button
+                variant="outline-dark"
+                style={storeBtn}
+                onClick={() => handleBakery("Pies")}
+              >
+                Pies
+              </Button>
+            </div>
+            <div style={{ width: "80%" }}>
+              <Row md={2} xs={1} lg={3} className="g-3">
+                {newStoreItems.map((item) => (
+                  <Col>
+                    <StoreItem key={item.id} {...item} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
           </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+      <Footer />
+    </>
   );
 }

@@ -34,7 +34,7 @@ const smallCircle: CSS.Properties = {
 export function ShoppingCartButton() {
   const location = useLocation();
   const btnDesign =
-    location.pathname === "/" ? "outline-light" : "outline-dark";
+    location.pathname === "/" || "/about" ? "outline-light" : "outline-dark";
   const { openCart, cartQuantity } = useShoppingCart();
   return (
     <Button

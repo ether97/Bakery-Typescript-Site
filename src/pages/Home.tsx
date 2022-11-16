@@ -74,7 +74,7 @@ export function Home() {
         <p>New York Times</p>
       </div>
       {/* </div> */}
-      <Button variant="outline-light" style={btn}>
+      <Button href={"/store"} variant="outline-light" style={btn}>
         Shop Pastries
       </Button>
     </div>
