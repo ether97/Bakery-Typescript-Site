@@ -3,16 +3,6 @@ import { Container, Stack } from "react-bootstrap";
 import { SiCakephp } from "react-icons/si";
 import { BsInstagram, BsFacebook } from "react-icons/bs";
 
-const footer: CSS.Properties = {
-  position: "absolute",
-  height: "400px",
-  width: "100%",
-  backgroundColor: "gray",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-};
-
 const divs: CSS.Properties = {
   width: "50%",
   height: "350px",
@@ -20,31 +10,12 @@ const divs: CSS.Properties = {
   alignItems: "center",
   justifyContent: "center",
   //   lineHeight: "400px",
-  backgroundColor: "gray",
-};
-
-const thinBlock: CSS.Properties = {
-  height: "300px",
-  width: "10px",
-  backgroundColor: "black",
 };
 
 const smallerDivs: CSS.Properties = {
   height: "300px",
   width: "49%",
   position: "relative",
-};
-
-const icon: CSS.Properties = {
-  height: "100px",
-  width: "100px",
-  position: "absolute",
-  left: "0",
-  right: "0",
-  marginLeft: "auto",
-  marginRight: "auto",
-  marginTop: "50px",
-  color: "black",
 };
 
 const header: CSS.Properties = {
@@ -112,8 +83,38 @@ export default function Footer({ fade = "white" }: FooterProps) {
     height: "10px",
     top: 0,
     width: "100%",
-    backgroundImage: `linear-gradient(to top, transparent, ${fade})`,
+    // backgroundImage: `linear-gradient(to top, transparent, ${fade})`,
   };
+
+  const footer: CSS.Properties = {
+    position: "absolute",
+    height: "400px",
+    width: "100%",
+    backgroundColor: fade === "white" ? "black" : "white",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: fade === "white" ? "white" : "",
+  };
+
+  const thinBlock: CSS.Properties = {
+    height: "300px",
+    width: "1px",
+    backgroundColor: fade === "white" ? "white" : "black",
+  };
+
+  const icon: CSS.Properties = {
+    height: "100px",
+    width: "100px",
+    position: "absolute",
+    left: "0",
+    right: "0",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginTop: "50px",
+    color: fade === "white" ? "white" : "black",
+  };
+
   return (
     <footer style={footer}>
       <Container>

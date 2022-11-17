@@ -47,8 +47,8 @@ const cakes: CSS.Properties = {
   fontFamily: "Petit Formal Script, cursive",
   lineHeight: "75vh",
   fontSize: "10rem",
-  color: "black",
-  textShadow: "5px 5px white",
+  color: "white",
+  textShadow: "5px 5px black",
   textAlign: "center",
 };
 
@@ -65,17 +65,21 @@ export function Store() {
 
   function handleBakery(input: string): void {
     if (input === "Cakes") {
+      let newInput = input.substring(0, input.length - 1);
       setTitle(input);
-      setNewStoreItems(storeItems.filter((item) => item.id <= 9));
+      setNewStoreItems(
+        storeItems.filter((item) => item.name.search(newInput) != -1)
+      );
     } else if (input === "Cookies") {
       setTitle(input);
       setNewStoreItems(
-        storeItems.filter((item) => item.id <= 18 && item.id > 9)
+        storeItems.filter((item) => item.name.search(input) != -1)
       );
     } else if (input === "Pies") {
+      let newInput = input.substring(0, input.length - 1);
       setTitle(input);
       setNewStoreItems(
-        storeItems.filter((item) => item.id <= 24 && item.id > 18)
+        storeItems.filter((item) => item.name.search(newInput) != -1)
       );
     } else {
       setTitle("Bakery");
@@ -87,15 +91,7 @@ export function Store() {
   function handleFlavor(input: string): void {
     setNewStoreItems(
       storeItems.filter((item) => {
-        if (
-          item.name.substring(0, 2) === input.substring(0, 2) &&
-          item.category === title
-        ) {
-          return item;
-        } else if (
-          item.name.substring(0, 2) === input.substring(0, 2) &&
-          title === "Bakery"
-        ) {
+        if (item.name.search(input) != -1) {
           return item;
         }
       })
@@ -109,7 +105,7 @@ export function Store() {
             style={{
               height: "300px",
               width: "100%",
-              backgroundColor: "rgb(255,255,255,0.5)",
+              backgroundColor: "rgb(0,0,0,0.5)",
             }}
             className="d-flex align-items-center justify-content-center"
           >

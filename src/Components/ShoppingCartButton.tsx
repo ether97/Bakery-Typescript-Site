@@ -4,17 +4,6 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { useLocation } from "react-router-dom";
 
-const shoppingCartBtn: CSS.Properties = {
-  position: "fixed",
-  bottom: "50px",
-  left: "50px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "100px",
-  width: "100px",
-};
-
 const smallCircle: CSS.Properties = {
   position: "absolute",
   height: "40px",
@@ -34,8 +23,18 @@ const smallCircle: CSS.Properties = {
 export function ShoppingCartButton() {
   const location = useLocation();
   const btnDesign =
-    location.pathname === "/" || "/about" ? "outline-light" : "outline-dark";
+    location.pathname === "/store" ? "outline-dark" : "outline-light";
   const { openCart, cartQuantity } = useShoppingCart();
+  const shoppingCartBtn: CSS.Properties = {
+    position: "fixed",
+    bottom: "50px",
+    left: "50px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100px",
+    width: "100px",
+  };
   return (
     <Button
       onClick={openCart}

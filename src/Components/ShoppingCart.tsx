@@ -1,16 +1,21 @@
-import { Offcanvas } from "react-bootstrap";
+import { Button, Offcanvas } from "react-bootstrap";
 import { useShoppingCart } from "./../context/ShoppingCartContext";
 import { Stack } from "react-bootstrap";
 import { CartItem } from "../Components/CartItem";
 import { formatCurrency } from "./../utilities/formatCurrency";
 import storeItems from "../data/items.json";
+import type * as CSS from "csstype";
+
+const checkoutButton: CSS.Properties = {
+  margin: "50px",
+};
 
 type ShoppingCartProps = {
   isOpen: boolean;
 };
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
-  const { closeCart, cartItems } = useShoppingCart();
+  const { closeCart, cartItems, openForm } = useShoppingCart();
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement="start">
       <Offcanvas.Header closeButton style={{ textAlign: "center" }}>
@@ -41,6 +46,17 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
           </div>
         </Stack>
       </Offcanvas.Body>
+      {cartItems.length > 0 ? (
+        <Button
+          variant="outline-dark"
+          onClick={openForm}
+          style={checkoutButton}
+        >
+          Checkout
+        </Button>
+      ) : (
+        ""
+      )}
     </Offcanvas>
   );
 }
