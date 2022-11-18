@@ -89,9 +89,15 @@ export function Store() {
   }
 
   function handleFlavor(input: string): void {
+    let lowerCaseInput = input.toLowerCase();
+
     setNewStoreItems(
       storeItems.filter((item) => {
+        let lowerCaseItemDescription = item.description.toLowerCase();
+        lowerCaseItemDescription.replace(",", "");
         if (item.name.search(input) != -1) {
+          return item;
+        } else if (lowerCaseItemDescription.search(lowerCaseInput) != -1) {
           return item;
         }
       })

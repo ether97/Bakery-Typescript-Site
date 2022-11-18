@@ -1,8 +1,13 @@
-import { Form, Button, Modal, Container, InputGroup } from "react-bootstrap";
+import { Button, Modal, Container, Stack } from "react-bootstrap";
 import { useShoppingCart } from "./../context/ShoppingCartContext";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import type * as CSS from "csstype";
 import { FaAmazon, FaPaypal, FaGooglePay } from "react-icons/fa";
+import { CartItem } from "./CartItem";
+import { InputForm } from "./InputForm";
+import { InputGroup, Form } from "react-bootstrap";
+import { formatCurrency } from "../utilities/formatCurrency";
+import storeItems from "../data/items.json";
 
 const formCloseButton: CSS.Properties = {
   margin: "20px",
@@ -28,126 +33,135 @@ export function CheckoutForm({ formIsOpen }: CheckoutFormProps) {
           style={{ color: "black", scale: "2", float: "right" }}
         />
       </Button>
-      <Container>
-        <div
-          className="d-flex justify-content-center w-50 flex-column"
-          style={{ gap: "20px" }}
-        >
-          <h1>hello,</h1>
-          <p>
-            <a
-              href=""
-              onClick={(e) => handleClick}
-              style={{ textDecoration: "none" }}
-            >
-              Cart
-            </a>{" "}
-            &gt; Customer Information &gt;{" "}
-            <span className="text-muted">Shipping Method</span> &gt;{" "}
-            <span className="text-muted">Payment Method</span>
-          </p>
+      <Container className="d-flex" style={{ gap: "50px", overflow: "auto" }}>
+        <div className="d-flex justify-content-center w-50 flex-column ">
           <div
-            className="d-flex align-items-center justify-content-center w-100"
-            style={{ height: "50px", gap: "30px" }}
+            className="d-flex justify-content-center w-100 flex-column"
+            style={{ gap: "20px" }}
           >
-            <Button size="lg" variant="warning" style={{ width: "200px" }}>
-              <FaAmazon />
-            </Button>
-            <Button size="lg" variant="warning" style={{ width: "200px" }}>
-              <FaPaypal />
-            </Button>
-            <Button size="lg" variant="dark" style={{ width: "200px" }}>
-              <FaGooglePay style={{ scale: "2" }} />
-            </Button>
-          </div>
-          <p className="text-muted" style={{ textAlign: "center" }}>
-            -----------------------------------OR-----------------------------------
-          </p>
-        </div>
-        <Form className="m-3 w-50">
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Contact Information</Form.Label>
-            <Form.Label style={{ float: "right" }}>
-              Already have an account? <a href="/">Log in</a>
-            </Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formBasicCheckbox">
-            <Form.Check
-              type="checkbox"
-              label="Keep me up to date on news and exclusive offers"
-            />
-          </Form.Group>
-          <Form.Group></Form.Group>
-          <Form.Group style={{}}>
-            <InputGroup className="mt-2">
-              <Form.Control
-                style={{ marginRight: "2px" }}
-                aria-label="First name"
-                placeholder="First name"
-              />
-              <Form.Control
-                style={{ marginLeft: "2px" }}
-                aria-label="Last name"
-                placeholder="Last name"
-              />
-            </InputGroup>
-            <Form.Control
-              className="mt-2"
-              type="email"
-              placeholder="Company (optional)"
-            />
-            <Form.Control className="mt-2" type="email" placeholder="Address" />
-            <Form.Control
-              className="mt-2"
-              type="email"
-              placeholder="Apartment, suite, etc. (optional)"
-            />
-            <Form.Control className="mt-2" type="email" placeholder="City" />
-            <InputGroup className="mt-2">
-              <Form.Control
-                style={{ marginRight: "2px" }}
-                aria-label="Country"
-                placeholder="Country"
-              />
-              <Form.Control
-                style={{ marginLeft: "2px" }}
-                aria-label="Postal Code"
-                placeholder="Postal Code"
-              />
-            </InputGroup>
-            <Form.Control
-              className="mt-2"
-              type="email"
-              placeholder="Phone (optional)"
-            />
-          </Form.Group>
-          <div
-            className="d-flex align-items-center justify-content-between mt-3"
-            style={{ height: "75px", width: "100%" }}
-          >
+            <h1>hello,</h1>
             <p>
               <a
-                onClick={(e) => handleClick}
                 href=""
+                onClick={(e) => handleClick(e)}
                 style={{ textDecoration: "none" }}
               >
-                &lt;Return to cart
-              </a>
+                Cart
+              </a>{" "}
+              &gt; Customer Information &gt;{" "}
+              <span className="text-muted">Shipping Method</span> &gt;{" "}
+              <span className="text-muted">Payment Method</span>
             </p>
-            <Button
-              variant="primary"
-              type="submit"
-              style={{ padding: "20px", float: "right" }}
+            <div
+              className="d-flex align-items-center justify-content-center w-100"
+              style={{ height: "50px", gap: "30px" }}
             >
-              Continue to Shipping Method
-            </Button>
+              <Button size="lg" variant="warning" style={{ width: "200px" }}>
+                <FaAmazon />
+              </Button>
+              <Button size="lg" variant="warning" style={{ width: "200px" }}>
+                <FaPaypal />
+              </Button>
+              <Button size="lg" variant="dark" style={{ width: "200px" }}>
+                <FaGooglePay style={{ scale: "2" }} />
+              </Button>
+            </div>
+            <p className="text-muted" style={{ textAlign: "center" }}>
+              -----------------------------------OR-----------------------------------
+            </p>
           </div>
-        </Form>
+          <InputForm handleClick={handleClick} />
+        </div>
+        <div
+          className="d-flex w-50 h-100 flex-column align-items-center overflow-auto"
+          style={{ backgroundColor: "rgb(0,0,0,0.1)" }}
+        >
+          <div className="d-flex flex-column" style={{ width: "80%" }}>
+            <Stack className="mt-5" gap={3} style={{ overflow: "auto" }}>
+              {cartItems.map((item) => (
+                <div>
+                  <CartItem key={item.id} {...item} />
+                </div>
+              ))}
+              <div
+                style={{
+                  height: "1px",
+                  width: "95%",
+                  backgroundColor: "rgb(0,0,0,0.2)",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              ></div>
+              <div
+                className="justify-content-between"
+                style={{
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  display: "flex",
+                  alignItems: "center",
+                  width: "100%",
+                  gap: "10px",
+                }}
+              >
+                <InputGroup>
+                  <Form.Control
+                    aria-label="Discount Code"
+                    placeholder="Gift card or discount code"
+                    required
+                  />
+                </InputGroup>
+                <Button variant="secondary">Apply</Button>
+              </div>
+              <div
+                style={{
+                  height: "1px",
+                  width: "95%",
+                  backgroundColor: "rgb(0,0,0,0.2)",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              ></div>
+              <div className="d-flex justify-content-between align-items-center">
+                <p className="text-muted">Subtotal</p>
+                <p className="fw-bold">
+                  {formatCurrency(
+                    cartItems.reduce((total, cartItem) => {
+                      const item = storeItems.find((i) => i.id === cartItem.id);
+                      return total + (item?.price || 0) * cartItem.quantity;
+                    }, 0)
+                  )}
+                </p>
+              </div>
+              <div className="d-flex justify-content-between align-items-center">
+                <p className="text-muted">Shipping</p>
+                <p className="fw-bold">---</p>
+              </div>
+              <div
+                style={{
+                  height: "1px",
+                  width: "95%",
+                  backgroundColor: "rgb(0,0,0,0.2)",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              ></div>
+              <div className="d-flex justify-content-between align-items-center">
+                <p className="">Total</p>
+                <p className="fw-bold" style={{ fontSize: "1.5rem" }}>
+                  <span className="text-muted" style={{ fontSize: "1rem" }}>
+                    USD{" "}
+                  </span>
+                  {formatCurrency(
+                    cartItems.reduce((total, cartItem) => {
+                      const item = storeItems.find((i) => i.id === cartItem.id);
+                      return total + (item?.price || 0) * cartItem.quantity;
+                    }, 0)
+                  )}
+                </p>
+              </div>
+            </Stack>
+          </div>
+        </div>
       </Container>
     </Modal>
   );

@@ -2,7 +2,8 @@ import { useShoppingCart } from "./../context/ShoppingCartContext";
 import storeItems from "../data/items.json";
 import { Stack, Button } from "react-bootstrap";
 import { formatCurrency } from "./../utilities/formatCurrency";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { FiPlusCircle } from "react-icons/fi";
+import { GrSubtractCircle } from "react-icons/gr";
 
 type CartItemProps = {
   id: number;
@@ -10,12 +11,17 @@ type CartItemProps = {
 };
 
 export function CartItem({ id, quantity }: CartItemProps) {
-  const { removeFromCart } = useShoppingCart();
+  const { removeFromCart, increaseCartQuantity, decreaseCartQuantity } =
+    useShoppingCart();
   const item = storeItems.find((item) => item.id === id);
   if (item == null) return null;
 
-  const handleClick = () => {
-    removeFromCart(id);
+  const handleRemove = () => {
+    decreaseCartQuantity(id);
+  };
+
+  const handleAdd = () => {
+    increaseCartQuantity(id);
   };
   return (
     <Stack direction="horizontal" gap={2}>
@@ -26,6 +32,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
           height: "75px",
           objectFit: "cover",
           border: "solid 1px black",
+          borderRadius: "5px",
         }}
       />
       <div className="d-flex flex-column">
@@ -35,11 +42,30 @@ export function CartItem({ id, quantity }: CartItemProps) {
         </div>
         <span>{formatCurrency(quantity * Number(item.price))}</span>
       </div>
-      <Button className="ms-auto" variant="none" onClick={handleClick}>
-        <AiOutlineCloseCircle
-          style={{ height: "30px", width: "30px", color: "red" }}
-        />
-      </Button>
+      <div className="ms-auto d-flex align-items-center justify-content-center">
+        <Button variant="none" style={{ padding: "0px" }} onClick={handleAdd}>
+          <FiPlusCircle
+            style={{
+              height: "30px",
+              width: "30px",
+              color: "black",
+            }}
+          />
+        </Button>
+        <Button
+          variant="none"
+          style={{ padding: "0px" }}
+          onClick={handleRemove}
+        >
+          <GrSubtractCircle
+            style={{
+              height: "29px",
+              width: "29px",
+              color: "gray",
+            }}
+          />
+        </Button>
+      </div>
     </Stack>
   );
 }
